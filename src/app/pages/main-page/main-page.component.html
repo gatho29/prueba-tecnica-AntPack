@@ -1,0 +1,30 @@
+<div class="flex">
+  <div class="w-3/5">
+    <img class="h-screen w-full" src="/assets/image/img-programacion.jpg" alt="img-programacion">
+  </div>
+  <div class="mt-10 w-2/5 flex-col flex items-center">
+    <p class="text-5xl font-semibold w-2/4 text-center">Prueba técnica a desarrollar</p>
+    <div class="mt-10 w-4/5 bg-cyan-50 rounded border-2 border-cyan-200 p-4 shadow-xl">
+      <p>Consuma la siguiente API <a class="text-blue-500" target="_black"
+          href="https://jsonplaceholder.typicode.com/users">https://jsonplaceholder.typicode.com/users</a> se debe
+        mostrar en pantalla los resultados de: </p>
+      <ul class="mt-4 list-disc ml-5">
+        <li>Nombre</li>
+        <li>Email</li>
+        <li>Ciudad</li>
+        <li>Nombre de compañia</li>
+        <li>Agregar un gravatar a cada usuario</li>
+      </ul>
+    </div>
+    <p class="text-2xl mt-10 font-semibold w-2/4 text-center">"Ver el resultado de la prueba"</p>
+    <div class="w-full text-center mt-8">
+      <div class="animate-bounce material-icons text-5xl">
+        arrow_downward
+      </div>
+    </div>
+    <button
+      class="font-semibold mt-10 bg-cyan-300 rounded-md w-80 h-16 text-xl shadow-md transition focus:outline-none hover:bg-cyan-400 hover:shadow-xl"
+      [routerLink]="'/home'">Ir
+      al resultado</button>
+  </div>
+</div>

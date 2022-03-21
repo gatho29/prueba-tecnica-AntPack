@@ -23,24 +23,26 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListUsers();
-    this.gravatartUsers();
+    setTimeout(() => {
+      this.gravatartUsers();
+    }, 500)
   }
 
   getListUsers(): void {
     this._srvUser.getListUsers().
-      subscribe(res => { this.usersLists = res, console.log(res);}
-      );
+      subscribe(res => this.usersLists = res);
   }
+
   gravatartUsers(): void {
-    this._srvUser.getListUsers().
-    subscribe( users => {
+    this._srvUser.getListUsers()
+      .subscribe(users => {
         this.usersLists = users.map(user => {
           const md5Str = this.md5.appendStr(user.email).end();
           return { ...user, image: `https://www.gravatar.com/avatar/${md5Str}?d=monsterid` }
         })
       },
-      error => console.log(error)
-    );
+        error => console.log(error)
+      );
   }
 
   detailsUser(listUser: IListUser): void {

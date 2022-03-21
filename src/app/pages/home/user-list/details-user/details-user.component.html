@@ -1,0 +1,51 @@
+<div class="flex items-center">
+
+  <div class="flex flex-col w-2/5">
+    <p class="text-4xl font-semibold">Información completa</p>
+    <img class="w-28 h-28 rounded-full ml-10 mt-5" [src]="data?.image" alt="gravatar">
+    <ul class="mt-8">
+      <li class="flex items-center gap-3">
+        <span class="material-icons opacity-50">face</span> <b>Nombre:</b>{{data?.name}}
+      </li>
+      <li class="flex items-center gap-3 mt-3">
+        <span class="material-icons opacity-50">call</span> <b>Telefono:</b> {{data?.phone}}
+      </li>
+      <li class="flex items-center gap-3 mt-3">
+        <span class="material-icons opacity-50">email</span> <b>Email:</b> {{data?.email}}
+      </li>
+      <li class="flex items-center gap-3 mt-3">
+        <span class="material-icons opacity-50">public</span> <b>Sitio web:</b> {{data?.website}}
+      </li>
+      <li class="flex items-center gap-3 mt-3">
+        <span class="material-icons opacity-50">business</span> <b>Nombre de compañia:</b> {{data?.company?.name}}
+      </li>
+      <li class="flex items-center gap-3 mt-3">
+        <span class="material-icons opacity-50">record_voice_over</span> <b>Eslogan:</b> {{data?.company?.catchPhrase}}
+      </li>
+      <li class="flex items-center gap-3 mt-3">
+        <span class="material-icons opacity-50">home</span> <b>Ciudad:</b> {{data?.address?.city}}
+      </li>
+    </ul>
+  </div>
+
+  <!-- view card -->
+  <div class="w-3/5">
+    <div class="border-2 h-80 w-3/4 p-5 shadow-xl rounded-md bg-cyan-100 border-cyan-200">
+      <p class="text-2xl"> <span class="font-medium">Compañia:</span> {{data?.company?.name}}</p>
+      <div class="flex items-center gap-8">
+        <img class="w-40 h-40 rounded-full ml-5 mt-5" [src]="data?.image" alt="gravatar">
+        <div class="flex flex-col">
+          <p class="text-3xl font-bold">{{data?.name}}</p>
+          <p class="text-md"> <span class="font-medium">Telefono:</span> {{data?.phone}}</p>
+          <p class="text-md"> <span class="font-medium">Ciudad:</span> {{data?.address?.city}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+  <button type="button" class="btn-gray" [mat-dialog-close]="true">
+    Cerrar
+  </button>
+</div>
